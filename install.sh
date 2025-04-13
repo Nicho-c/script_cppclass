@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Nom du script et du manuel
-SCRIPT="pinit.sh"
-SCRIPT_NAME="pinit"
-MANUAL="pinit.1"
+SCRIPT="cppclass.sh"
+SCRIPT_NAME="cppclass"
+MANUAL="cppclass.1"
 
 # Chemins de destination
 BIN_PATH="/usr/local/bin"
@@ -34,29 +34,29 @@ else
     echo "La base de données des pages man a été mise à jour."
 fi
 
-# Ajouter la commande pinit dans ~/.zshrc si elle n'existe pas déjà
+# Ajouter la commande cppclass dans ~/.zshrc si elle n'existe pas déjà
 if [ -f "$ZSHRC" ]; then
-    if ! grep -q "pinit" "$ZSHRC"; then
-        echo "alias pinit='$BIN_PATH/$SCRIPT_NAME'" >> "$ZSHRC"
-        echo "La commande pinit a été ajoutée à $ZSHRC."
+    if ! grep -q "cppclass" "$ZSHRC"; then
+        echo "alias cppclass='$BIN_PATH/$SCRIPT_NAME'" >> "$ZSHRC"
+        echo "La commande cppclass a été ajoutée à $ZSHRC."
     else
-        echo "La commande pinit est déjà présente dans $ZSHRC."
+        echo "La commande cppclass est déjà présente dans $ZSHRC."
     fi
 else
     echo "$ZSHRC n'existe pas."
 fi
 
-# Ajouter la commande pinit dans ~/.bashrc si elle n'existe pas déjà
+# Ajouter la commande cppclass dans ~/.bashrc si elle n'existe pas déjà
 if [ -f "$BASHRC" ]; then
-    if ! grep -q "pinit" "$BASHRC"; then
-        echo "alias pinit='$BIN_PATH/$SCRIPT_NAME'" >> "$BASHRC"
-        echo "La commande pinit a été ajoutée à $BASHRC."
+    if ! grep -q "cppclass" "$BASHRC"; then
+        echo "alias cppclass='$BIN_PATH/$SCRIPT_NAME'" >> "$BASHRC"
+        echo "La commande cppclass a été ajoutée à $BASHRC."
     else
-        echo "La commande pinit est déjà présente dans $BASHRC."
+        echo "La commande cppclass est déjà présente dans $BASHRC."
     fi
 else
     echo "$BASHRC n'existe pas."
 fi
 
-echo "Installation de pinit terminée."
-echo "Rappel : insérer \"alias pinit='$BIN_PATH/$SCRIPT_NAME' >> $BASHRC\" dans votre fichier de configuration de shell pour pouvoir utiliser la commande directement"
+echo "Installation de cppclass terminée."
+echo "Rappel : insérer \"alias cppclass='$BIN_PATH/$SCRIPT_NAME' >> $BASHRC\" dans votre fichier de configuration de shell pour pouvoir utiliser la commande directement"

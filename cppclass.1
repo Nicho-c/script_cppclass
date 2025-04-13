@@ -1,84 +1,38 @@
 .\" Début de la page de manuel
 .\" Ceci est un commentaire, il ne sera pas affiché dans la sortie finale
 .\" .TH définit le titre de la page, la section, la date, la version, et un commentaire additionnel
-.TH PINIT 1 "Octobre 2024" "1.0" "Page de manuel pour pinit"
+.TH CPPCLASS 1 "Avril 2025" "1.0" "Page de manuel pour cppclass"
 
 .\" Section NAME (Nom de la commande et brève description)
 .SH NAME
-pinit \- Intialisation d'un template de projet préconçu
+cppclass \- Chargement d'un template de class cpp
 
 .SH SYNOPSIS
-.B cinit
+.B cppclass
 .RI [ options ] " <destination_folder> [branch_type] [git_url]"
 
 .\" Section DESCRIPTION (Description détaillée de ce que fait la commande)
 .SH DESCRIPTION
-.B cinit
-est une commande permettant de load directement un projet avec une structure par défaut.
+.B cppclass
+est une commande permettant de crée directement une class a partir d'un template.
 
 .LP
-Voici un exemple d'exécution avec deux arguments :
+Voici un exemple d'exécution avec arguments : cppclass
 .TP
 .B arg1
-Nom du projet à initialisé. (Par exemple, "So_long", "Philosopher", "Minishell".)
-.TP
-.B arg2
-Type de template a initialisé (Par defaut : C)
-1. C
-2. Cgame
-3. JS
-4. PY (non fonctionnel pour le moment)
-Et d'autre encore viendront
-.TP
-.B arg3
-Url git sur lequel set le nouveau projet
+Nom de la class a créer
 .\" 
-
-.LP
-pinit prend également en charge certaines options pour afficher l'aide ou la version.
-
-.\" Section OPTIONS (Liste des options disponibles pour ta commande)
-.SH OPTIONS
-.TP
-.B \-v, --version
-Affiche la version de la commande `cinit`.
-.\" Ce commentaire : Ceci est une option simple sans argument, qui affiche juste la version du programme.
-
-.TP
-.B \-h, --help
-Affiche l'aide pour la commande, y compris les informations sur les arguments et les options.
-
-.TP
-.B \-f, --force
-Force l'action sur le service, même si des avertissements sont présents.
-.\" Ici, tu peux décrire d'autres options spécifiques à ton programme si nécessaire.
 
 .\" Section EXAMPLES (Exemples pratiques d'utilisation)
 .SH EXAMPLES
-Voici des exemples pratiques d'utilisation de la commande cinit :
+Voici un exemple pratique d'utilisation de la commande cppclass :
 
 .TP
-.B cinit apache start
-Démarre le service "apache".
-.\" Commentaire : ici, l'argument `apache` est un exemple de service (arg1), et `start` est l'action (arg2).
+.B cppclass Contact
+Créer les fichiers Contact.cpp et Contact.hpp 
+.\"
 
-.TP
-.B cinit mysql stop
-Arrête le service "mysql".
-.\" Ici, "mysql" est arg1 et "stop" est arg2.
-
-.TP
-.B cinit apache restart
-Redémarre le service "apache".
-.\" Commentaire : tu peux ajouter autant d'exemples que nécessaire pour illustrer les différentes utilisations de la commande.
-
-.\" Section AUTHOR (Information sur l'auteur de la commande)
+.\" Section AUTHOR
 .SH AUTHOR
-Ton Nom <ton.email@example.com>
-.\" Remplace "Ton Nom" et "ton.email@example.com" par tes informations personnelles.
-
-.\" Section SEE ALSO (Autres pages de manuel ou commandes associées)
-.SH SEE ALSO
-.B init(1),
-.B systemd(1)
-.\" Liste ici les autres pages de manuel ou commandes pertinentes en relation avec cinit.
+nchetela <nchetela@student.42lausanne.ch>
+.\"
