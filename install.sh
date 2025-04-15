@@ -13,26 +13,26 @@ BASHRC="$HOME/.bashrc"
 
 # Vérifie si le script est déjà dans /usr/local/bin
 if [ -f "$BIN_PATH/$SCRIPT_NAME" ]; then
-    echo "$SCRIPT_NAME est déjà présent dans $BIN_PATH."
-else
-    # Copie le script dans /usr/local/bin et le rend exécutable
-    sudo cp "$SCRIPT" "$BIN_PATH/$SCRIPT_NAME"
-    sudo chmod +x "$BIN_PATH/$SCRIPT_NAME"
-    echo "$SCRIPT_NAME a été copié dans $BIN_PATH."
+    echo "$SCRIPT_NAME est déjà présent dans $BIN_PATH. (Suppression)"
+	sudo rm $BIN_PATH/$SCRIPT_NAME
 fi
+# Copie le script dans /usr/local/bin et le rend exécutable
+sudo cp "$SCRIPT" "$BIN_PATH/$SCRIPT_NAME"
+sudo chmod +x "$BIN_PATH/$SCRIPT_NAME"
+echo "$SCRIPT_NAME a été copié dans $BIN_PATH."
 
 # Vérifie si le manuel est déjà dans /usr/local/share/man/man1
 if [ -f "$MAN_PATH/$MANUAL" ]; then
-    echo "La page manuelle $MANUAL est déjà présente dans $MAN_PATH."
-else
-    # Copie le fichier de manuel
-    sudo cp "$MANUAL" "$MAN_PATH"
-    echo "La page manuelle $MANUAL a été copiée dans $MAN_PATH."
-    
-    # Met à jour la base de données des pages de manuel
-    sudo mandb
-    echo "La base de données des pages man a été mise à jour."
+    echo "La page manuelle $MANUAL est déjà présente dans $MAN_PATH. (Suppresion)"
+	sudo rm $MAN_PATH/$MANUAL
 fi
+# Copie le fichier de manuel
+sudo cp "$MANUAL" "$MAN_PATH"
+echo "La page manuelle $MANUAL a été copiée dans $MAN_PATH."
+
+# Met à jour la base de données des pages de manuel
+sudo mandb
+echo "La base de données des pages man a été mise à jour."
 
 # Ajouter la commande cppclass dans ~/.zshrc si elle n'existe pas déjà
 if [ -f "$ZSHRC" ]; then
